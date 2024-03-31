@@ -1,0 +1,74 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+  #"lost_windows",
+  #"monitors",
+  #"shift_monitors",
+  #"toggle_dpms",
+  "magnify",
+  #"expose",
+  #"shift_monitors",
+  #"workspaces_follow_focus",
+]
+
+[workspaces_follow_focus]
+max_workspaces = 10
+
+[expose]
+include_special = false
+
+[scratchpads.stb]
+animation = "fromBottom"
+command = "kitty --class kitty-stb sstb"
+class = "kitty-stb"
+lazy = true
+size = "50% 40%"
+
+[scratchpads.stb-logs]
+animation = "fromTop"
+command = "kitty --class kitty-stb-logs stbLog"
+class = "kitty-stb-logs"
+lazy = true
+size = "50% 40%"
+
+[scratchpads.term]
+animation = "fromTop"
+command = "kitty --class kitty-dropterm"
+class = "kitty-dropterm"
+size = "70% 50%"
+max_size = "100% 100%"
+
+[scratchpads.ncmpcpp]
+animation = "fromTop"
+command = "kitty --class kitty-ncmpcpp ncmpcpp"
+class = "kitty-ncmpcpp"
+size = "90% 80%"
+max_size = "100% 100%"
+
+
+[scratchpads.neomutt1]
+animation = "fromTop"
+command = "alacritty --class='neomutt1' -e neomutt"
+class = "neomutt1"
+size = "90% 80%"
+max_size = "100% 100%"
+
+
+[scratchpads.volume]
+animation = "fromTop"
+command = "pavucontrol"
+class = "pavucontrol"
+lazy = true
+size = "40% 70%"
+unfocus = "hide"
+
+[monitors]
+unknown = "wlrlui"
+
+#[monitors.placement]
+"Acer".leftOf = "HDMI-0"
+"Sony".topOf = "eDP-1"
+
+[zoom]
+
+#excludes = ["volume", "term"]
