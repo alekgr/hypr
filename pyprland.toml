@@ -48,7 +48,7 @@ max_size = "100% 100%"
 
 [scratchpads.neomutt1]
 animation = "fromTop"
-command = "alacritty --class='neomutt1' -e neomutt"
+command = "kitty --class='neomutt1' neomutt"
 class = "neomutt1"
 size = "90% 80%"
 max_size = "100% 100%"
