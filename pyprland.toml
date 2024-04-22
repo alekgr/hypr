@@ -35,7 +35,7 @@ size = "50% 40%"
 animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
-size = "70% 50%"
+size = "60% 50%"
 max_size = "100% 100%"
 
 [scratchpads.ncmpcpp]
@@ -50,7 +50,7 @@ max_size = "100% 100%"
 animation = "fromTop"
 command = "kitty --class='neomutt1' neomutt"
 class = "neomutt1"
-size = "90% 80%"
+size = "60% 80%"
 max_size = "100% 100%"
 
 [scratchpads.ranger]
