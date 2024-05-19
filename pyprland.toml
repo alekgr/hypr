@@ -60,13 +60,12 @@ class = "ranger"
 size = "90% 80%"
 max_size = "100% 100%"
 
-[scratchpads.volume]
-animation = "fromTop"
-command = "pavucontrol"
-class = "pavucontrol"
-lazy = true
-size = "40% 70%"
-unfocus = "hide"
+#[scratchpads.volume]
+#animation = "fromTop"
+#command = "pavucontrol"
+#class = "pavucontrol"
+#size = "40% 70%"
+#max_size = "100% 100%"
 
 [monitors]
 unknown = "wlrlui"
