@@ -67,12 +67,12 @@ max_size = "100% 100%"
 #size = "40% 70%"
 #max_size = "100% 100%"
 
-[monitors]
-unknown = "wlrlui"
+#[monitors]
+#unknown = "wlrlui"
 
 #[monitors.placement]
-"Acer".leftOf = "HDMI-0"
-"Sony".topOf = "eDP-1"
+#"Acer".leftOf = "HDMI-0"
+#"Sony".topOf = "eDP-1"
 
 [zoom]
 
