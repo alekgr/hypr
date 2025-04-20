@@ -38,10 +38,10 @@ class = "kitty-dropterm"
 size = "60% 50%"
 max_size = "100% 100%"
 
-[scratchpads.ncmpcpp]
+[scratchpads.cmus]
 animation = "fromTop"
-command = "kitty --class kitty-ncmpcpp ncmpcpp"
-class = "kitty-ncmpcpp"
+command = "kitty --class kitty-cmus cmus"
+class = "kitty-cmus"
 size = "90% 80%"
 max_size = "100% 100%"
 
