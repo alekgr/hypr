@@ -1,0 +1,79 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+  #"lost_windows",
+  #"monitors",
+  #"shift_monitors",
+  #"toggle_dpms",
+  "magnify",
+  #"expose",
+  #"shift_monitors",
+  #"workspaces_follow_focus",
+]
+
+[workspaces_follow_focus]
+max_workspaces = 10
+
+[expose]
+include_special = false
+
+[scratchpads.stb]
+animation = "fromBottom"
+command = "kitty --class kitty-stb sstb"
+class = "kitty-stb"
+lazy = true
+size = "50% 40%"
+
+[scratchpads.stb-logs]
+animation = "fromTop"
+command = "kitty --class kitty-stb-logs stbLog"
+class = "kitty-stb-logs"
+lazy = true
+size = "50% 40%"
+
+[scratchpads.term]
+animation = "fromTop"
+command = "kitty --class kitty-dropterm"
+class = "kitty-dropterm"
+size = "60% 50%"
+max_size = "100% 100%"
+
+[scratchpads.cmus]
+animation = "fromTop"
+command = "kitty --class kitty-cmus cmus"
+class = "kitty-cmus"
+size = "90% 80%"
+max_size = "100% 100%"
+
+
+[scratchpads.neomutt1]
+animation = "fromTop"
+command = "kitty --class='neomutt1' neomutt"
+class = "neomutt1"
+size = "60% 80%"
+max_size = "100% 100%"
+
+[scratchpads.ranger]
+animation = "fromTop"
+command = "kitty --class ranger  ranger"
+class = "ranger"
+size = "90% 80%"
+max_size = "100% 100%"
+
+#[scratchpads.volume]
+#animation = "fromTop"
+#command = "pavucontrol"
+#class = "pavucontrol"
+#size = "40% 70%"
+#max_size = "100% 100%"
+
+#[monitors]
+#unknown = "wlrlui"
+
+#[monitors.placement]
+#"Acer".leftOf = "HDMI-0"
+#"Sony".topOf = "eDP-1"
+
+[zoom]
+
+#excludes = ["volume", "term"]
