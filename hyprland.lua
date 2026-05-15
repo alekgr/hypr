@@ -59,6 +59,7 @@ hl.on("hyprland.start",
 	function()
     		hl.exec_cmd("swaybg -i /usr/share/hypr/wall2.png")
 		hl.exec_cmd("waybar")
+		hl.exec_cmd("pypr")
  end)
 
 
@@ -317,6 +318,10 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+
+--pypr stuff
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("pypr  toggle term"))
 
 
 --------------------------------
