@@ -59,7 +59,7 @@ hl.on("hyprland.start",
 	function()
     		hl.exec_cmd("swaybg -i /usr/share/hypr/wall2.png")
 		hl.exec_cmd("waybar")
-		hl.exec_cmd("pypr")
+		hl.exec_cmd("pypr --debug /tmp/pypr.log")
  end)
 
 
@@ -321,7 +321,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 
 
 --pypr stuff
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("pypr  toggle term"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("pypr toggle term"))
 
 
 --------------------------------
@@ -341,6 +341,17 @@ local suppressMaximizeRule = hl.window_rule({
     suppress_event = "maximize",
 })
 -- suppressMaximizeRule:set_enabled(false)
+
+hl.window_rule(
+	{
+		name = "floating_pypr",
+		match = {
+			class = "kitty-dropterm",
+			float = true,
+			pin = false,
+		},
+	}
+)
 
 hl.window_rule({
     -- Fix some dragging issues with XWayland
