@@ -55,6 +55,12 @@ local menu        = "hyprlauncher"
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
 -- end)
 
+hl.on("hyprland.start",
+	function()
+    		hl.exec_cmd("swaybg -i /usr/share/hypr/wall2.png")
+ end)
+
+
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
