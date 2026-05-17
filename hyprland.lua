@@ -36,7 +36,7 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "dolphin"
+local fileManager = "yazi"
 local menu        = "tofi-drun  --drun-launch=true"
 
 
@@ -273,7 +273,6 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind("SUPER + SHIFT + E", hl.dsp.exec_cmd("command uwsm stop"))
 hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("command systemctl reboot"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
@@ -322,7 +321,10 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 
 --pypr stuff
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("pypr toggle term"))
-
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("pypr toggle yazi"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("pypr toggle cmus"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("pypr toggle neomutt1"))
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
