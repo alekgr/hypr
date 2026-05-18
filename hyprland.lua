@@ -104,6 +104,8 @@ hl.config({
         gaps_out = 20,
 
         border_size = 4,
+	
+	no_focus_fallback = false,
 
         col = {
             active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
@@ -224,10 +226,10 @@ hl.config({
 ----------------
 
 hl.config({
-    misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
-    },
+        misc = {
+        	force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+        	disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+    	},
 })
 
 
@@ -237,6 +239,7 @@ hl.config({
 
 hl.config({
     input = {
+	focus_on_close = 0,
         kb_layout  = "us",
         kb_variant = "",
         kb_model   = "",
@@ -250,6 +253,10 @@ hl.config({
         touchpad = {
             natural_scroll = false,
         },
+    },
+
+    cursor = {
+	    no_warps = true,
     },
 })
 
