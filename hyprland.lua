@@ -229,6 +229,7 @@ hl.config({
         misc = {
         	force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
         	disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+			focus_on_activate = false,
     	},
 })
 
@@ -357,16 +358,6 @@ local suppressMaximizeRule = hl.window_rule({
 })
 -- suppressMaximizeRule:set_enabled(false)
 
-hl.window_rule(
-	{
-		name = "floating_pypr",
-		match = {
-			class = "kitty-dropterm",
-			float = true,
-			pin = false,
-		},
-	}
-)
 
 hl.window_rule({
     -- Fix some dragging issues with XWayland
@@ -399,3 +390,87 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+--floating rule 
+
+--pypr stuff
+hl.window_rule({
+		name = "kitty_floating",
+		match = { class = "kitty-dropterm" },
+		float = true,
+		no_follow_mouse = true,
+		stay_focused = true,
+	})
+hl.window_rule ({
+		name = "kitty-cmus_floating",
+		match = { class = "kitty-cmus"},
+		float = true,
+		pin = false,
+		no_follow_mouse = true,
+		stay_focused = true,
+	})
+hl.window_rule ({
+		name = "neomutt_flaotinging",
+		match = { class = "neomutt1"},
+		float = true,
+		pin = true,
+		no_follow_mouse = true,
+		stay_focused = true,
+	})
+
+
+
+-- waybar rules --kind of 
+hl.window_rule({
+		name = "alacritty_floating",
+		match = { class = "Alacritty"},
+		float = true,
+		no_follow_mouse = true,
+		stay_focused = true,
+	})
+hl.window_rule ({
+		name = "pavucontor_floating",
+		match = { class = "org.pulseaudio.pavucontrol"},
+		float = true,
+		pin = true,
+		size = {2000, 1000},
+		no_follow_mouse = true,
+		stay_focused = true,
+	})
+
+
+-- workspace rules
+hl.window_rule ({
+		name = "kitty",
+		match = {class = "kitty"},
+		workspace = "3",
+	})
+hl.window_rule ({
+		name = "browsers",
+		match = {class = "^(floorp|brave-browser)$"},
+		workspace = "2",
+	})
+hl.window_rule ({
+		name = "kitty-tasks",
+		match = {class = "kitty-tasks"},
+		workspace = "4",
+	})
+hl.window_rule ({
+		name = "kitty-nvim",
+		match = {class = "kitty-nvim"},
+		workspace = "5",
+	})
+hl.window_rule ({
+		name = "kitty-weechat",
+		match = {class = "kitty-weechat"},
+		workspace = "6",
+	})
+hl.window_rule ({
+		name = "kitty-weechat2",
+		match = {
+			class = "kitty",
+			title = "weechat",
+		},
+		workspace = "6",
+	})
+
