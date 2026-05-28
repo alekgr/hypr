@@ -286,10 +286,11 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind("SUPER + SHIFT + E", hl.dsp.exec_cmd("command uwsm stop"))
 hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("command systemctl reboot"))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -344,7 +345,11 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
 --applications
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("floorp"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("brave"))
---hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("kitty") --class="")
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("kitty --class='kitty-weechat' weechat"))
+-- hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("kitty --class=kitty-tasks sh -c 'task list && zsh'"))
+ hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("kitty --class=kitty-tasks tasksh"))
+ hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty --class=kitty-nvim nvim"))
+
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
