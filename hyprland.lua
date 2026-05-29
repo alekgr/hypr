@@ -346,7 +346,6 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("floorp"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("brave"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("kitty --class='kitty-weechat' weechat"))
--- hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("kitty --class=kitty-tasks sh -c 'task list && zsh'"))
  hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("kitty --class=kitty-tasks tasksh"))
  hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty --class=kitty-nvim nvim"))
 
