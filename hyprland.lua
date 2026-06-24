@@ -15,29 +15,34 @@
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-    output   = "HDMI-A-1",
-    mode     = "3840x2160@60",
-    position = "0x0",
-    scale    = "1",
-})
+-- hl.monitor({
+--     output   = "HDMI-A-1",
+--     mode     = "3840x2160@60",
+--     position = "0x0",
+--     scale    = "1",
+-- })
+--
+--
+-- hl.monitor({
+-- 	   output   = "eDP-1",
+-- 	   mode     = "1920x1080@60",
+--      	   position = "3840x0",
+--      	   scale    = "1",
+--  })
+
+-- env variables
+local my_env = {
+	terminal = "kitty",
+	fileManager =  "yazi",
+	menu        =  "tofi-drun  --drun-launch=true"
+}
 
 
-hl.monitor({
-    output   = "eDP-1",
-    mode     = "1920x1080@60",
-    position = "3840x0",
-    scale    = "1",
-})
+package.path = package.path .. ";/home/alek/.config/hypr-lua/?.lua"
+require('monitors')
+require('keybinds')(my_env)
 
----------------------
----- MY PROGRAMS ----
----------------------
 
--- Set programs that you use
-local terminal    = "kitty"
-local fileManager = "yazi"
-local menu        = "tofi-drun  --drun-launch=true"
 
 
 -------------------
@@ -60,7 +65,7 @@ hl.on("hyprland.start",
     		hl.exec_cmd("swaybg -i /usr/share/hypr/wall2.png")
 		hl.exec_cmd("waybar")
 		hl.exec_cmd("pypr --debug /tmp/pypr.log")
- end)
+end)
 
 
 
@@ -275,79 +280,6 @@ hl.device({
 })
 
 
----------------------
----- KEYBINDINGS ----
----------------------
-
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + C", hl.dsp.window.close())
-hl.bind("SUPER + SHIFT + E", hl.dsp.exec_cmd("command uwsm stop"))
-hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("command systemctl reboot"))
-hl.bind("SUPER + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-
--- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
-hl.bind(mainMod .. " + TAB", hl.dsp.window.cycle_next())
-
--- Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
-for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
-end
-
--- Example special workspace (scratchpad)
---hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
---hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
-
--- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-
--- Laptop multimedia keys for volume and LCD brightness
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
-hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
-
--- Requires playerctl
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
-
-
---pypr stuff
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("pypr toggle term"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("pypr toggle yazi"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("pypr toggle cmus"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("pypr toggle neomutt1"))
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
-
-
---applications
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("floorp"))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("brave"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("kitty --class='kitty-weechat' weechat"))
- hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("kitty --class=kitty-tasks tasksh"))
- hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty --class=kitty-nvim nvim"))
 
 
 --------------------------------
