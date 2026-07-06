@@ -9,27 +9,6 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
-
-------------------
----- MONITORS ----
-------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
--- hl.monitor({
---     output   = "HDMI-A-1",
---     mode     = "3840x2160@60",
---     position = "0x0",
---     scale    = "1",
--- })
---
---
--- hl.monitor({
--- 	   output   = "eDP-1",
--- 	   mode     = "1920x1080@60",
---      	   position = "3840x0",
---      	   scale    = "1",
---  })
-
 -- env variables
 local my_env = {
 	terminal = "kitty",
