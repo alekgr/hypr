@@ -1,38 +1,29 @@
 local function apply_monitor_config()
     local monitors = hl.get_monitors()
     local big_monitor_name = nil
-
+    
     -- Loop through active screens and find any HDMI-A output
     for _, m in ipairs(monitors) do
-        if m.name and m.name:match("^HDMI%-A") then
+        if m.name and m.name:match("^HDMI%-A%-") then
             big_monitor_name = m.name
             break
         end
     end
-
-    -- Apply layouts based on detection
+    
+    -- Apply layouts based on detection using standard hl.config strings
     if big_monitor_name then
-        -- Big monitor on the left
-        hl.monitor({
-            output   = big_monitor_name,
-            mode     = "3840x2160@60",
-            position = "0x0",
-            scale    = "1",
-        })
-        -- Laptop screen on the right
-        hl.monitor({
-            output   = "eDP-1",
-            mode     = "1920x1080@60",
-            position = "3840x0",
-            scale    = "1",
+        hl.config({
+            monitor = {
+                big_monitor_name .. ", 3840x2160@60, 0x0, 1",
+                "eDP-1, 1920x1080@60, 3840x0, 1"
+            }
         })
     else
-        -- Fallback: Laptop screen only when disconnected from the KVM
-        hl.monitor({
-            output   = "eDP-1",
-            mode     = "1920x1080@60",
-            position = "0x0",
-            scale    = "1",
+        -- Fallback: Laptop screen only when disconnected
+        hl.config({
+            monitor = {
+                "eDP-1, 1920x1080@60, 0x0, 1"
+            }
         })
     end
 end
