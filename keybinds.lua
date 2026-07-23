@@ -74,4 +74,5 @@ return function(config)
 	hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("kitty --class='kitty-weechat' weechat"))
 	hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("kitty --class=kitty-tasks tasksh"))
 	hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty --class=kitty-nvim nvim"))
+	hl.bind(mainMod .. " + l", hl.dsp.exec_cmd("hyprlock"))
 end
