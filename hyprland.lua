@@ -17,7 +17,7 @@ local my_env = {
 }
 
 
-package.path = package.path .. ";/home/alek/.config/hypr-lua/?.lua"
+--package.path = package.path .. ";/home/alek/.config/hypr-lua/?.lua"
 require('environment')()
 require('monitors')
 require('keybinds')(my_env)
