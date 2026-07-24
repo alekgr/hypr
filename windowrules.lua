@@ -105,7 +105,7 @@ hl.window_rule ({
 	})
 hl.window_rule ({
 		name = "browsers",
-		match = {class = "^(floorp|brave-browser)$"},
+		match = {class = "^(firefox|brave-browser)$"},
 		workspace = "2",
 	})
 hl.window_rule ({
