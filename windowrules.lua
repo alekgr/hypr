@@ -132,3 +132,11 @@ hl.window_rule ({
 		workspace = "6",
 	})
 
+hl.window_rule({
+		name = "browser transparency",
+		match = {
+			class = "^(brave-browser|firefox)$",
+		},
+		opacity = "0.85 0.85",
+
+})
