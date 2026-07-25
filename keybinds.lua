@@ -6,6 +6,8 @@ return function(config)
 	local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 	local terminal = config.terminal
 	local menu     = config.menu
+	local browser1  = "firefox"
+	local browser2  = "brave"
 
 	-- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 	hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
@@ -69,8 +71,8 @@ return function(config)
 
 
 	--applications
-	hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("floorp"))
-	hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("brave"))
+	hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(browser1))
+	hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(browser2))
 	hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("kitty --class='kitty-weechat' weechat"))
 	hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("kitty --class=kitty-tasks tasksh"))
 	hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty --class=kitty-nvim nvim"))
