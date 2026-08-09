@@ -20,6 +20,7 @@ local my_env = {
 --package.path = package.path .. ";/home/alek/.config/hypr-lua/?.lua"
 require('environment')()
 require('monitors')
+require('workspace')
 require('keybinds')(my_env)
 require('windowrules')
 require('autostart')
