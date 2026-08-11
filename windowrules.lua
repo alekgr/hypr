@@ -100,28 +100,29 @@ hl.window_rule ({
 -- workspace rules
 hl.window_rule ({
 		name = "kitty",
-		match = {class = "kitty"},
-		workspace = "3",
+		match = {initial_class = "^(kitty)$"},
+		workspace = "2",
 	})
 hl.window_rule ({
 		name = "browsers",
 		match = {class = "^(firefox|brave-browser)$"},
-		workspace = "2",
+		workspace = "1",
 	})
 hl.window_rule ({
 		name = "kitty-tasks",
-		match = {class = "kitty-tasks"},
-		workspace = "4",
+		match = {class = "^(kitty-tasks)$"},
+		workspace = "3",
+		group = "deny",
 	})
 hl.window_rule ({
 		name = "kitty-nvim",
 		match = {class = "kitty-nvim"},
-		workspace = "5",
+		workspace = "4",
 	})
 hl.window_rule ({
 		name = "kitty-weechat",
 		match = {class = "kitty-weechat"},
-		workspace = "6",
+		workspace = "5",
 	})
 hl.window_rule ({
 		name = "kitty-weechat2",
