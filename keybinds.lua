@@ -26,7 +26,7 @@ return function(config)
 	hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 	hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 	hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
-	hl.bind(mainMod .. " + TAB", hl.dsp.window.cycle_next())
+	hl.bind(mainMod .. " + Tab",   hl.dsp.window.cycle_next())
 
 	-- Switch workspaces with mainMod + [0-9]
 	-- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -75,7 +75,7 @@ return function(config)
 	hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(browser1))
 	hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(browser2))
 	hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("kitty --class='kitty-weechat' weechat"))
-	hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("kitty --class=kitty-tasks tasksh"))
+	hl.bind(mainMod .. " + t", hl.dsp.exec_cmd('kitty --class=kitty-tasks -e bash -c "task list; exec tasksh"'))
 	hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty --class=kitty-nvim nvim"))
 	hl.bind(mainMod .. " + l", hl.dsp.exec_cmd("hyprlock"))
 end
