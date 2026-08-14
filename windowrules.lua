@@ -141,3 +141,17 @@ hl.window_rule({
 		opacity = "0.85 0.85",
 
 })
+
+hl.window_rule ({
+        name = "mpv_file_picker",
+        match = { 
+            class = "xdg-desktop-portal-gtk",
+            title = "Open File with mpv"
+        },
+        float = true,
+        center = true,
+        pin = true,
+        size = {900, 650},
+        stay_focused = true,
+})
+
