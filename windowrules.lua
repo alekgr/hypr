@@ -12,8 +12,7 @@ local suppressMaximizeRule = hl.window_rule({
     name  = "suppress-maximize-events",
     match = { class = ".*" },
 
-    suppress_event = "maximize",
-})
+    suppress_event = "maximize", })
 -- suppressMaximizeRule:set_enabled(false)
 
 
@@ -155,3 +154,12 @@ hl.window_rule ({
         stay_focused = true,
 })
 
+hl.window_rule({
+    name = "khal_calendar_popup",
+    match = {
+        class = "khal_calendar",
+    },
+    float = true,
+    move = "cursor 0% 100%",
+    size = {1800, 800},
+})
