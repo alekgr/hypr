@@ -14,7 +14,7 @@ return function(config)
 	hl.bind(mainMod .. " + C", hl.dsp.window.close())
 	hl.bind("SUPER + SHIFT + E", hl.dsp.exec_cmd("command uwsm stop"))
 	hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("command systemctl reboot"))
-	hl.bind("SUPER + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
+	hl.bind("SUPER + SHIFT + f", hl.dsp.window.float({ action = "toggle" }))
 	hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 	hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 	hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
