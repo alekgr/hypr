@@ -21,22 +21,29 @@ local function apply_monitor_config()
         })
         -- Laptop screen on the right
         hl.monitor({
-            output   = "eDP-1",
-            mode     = "1920x1080@60",
-            position = "3840x0",
-            scale    = "1",
-        })
+	    output    = "eDP-1",
+	    disabled  = true,
+	})
+
 	hl.dispatch(hl.dsp.focus({monitor = big_monitor_name}))
     else
         -- Fallback: Laptop screen only when disconnected from the KVM
         hl.monitor({
             output   = "eDP-1",
+	    disabled = false,
             mode     = "1920x1080@60",
             position = "0x0",
             scale    = "1",
         })
     end
+
+
+    os.execute("pkill -9 -x waybar; waybar > /dev/null 2>&1 &")
+
+
 end
+
+
 
 -- Connect the configuration handler to Hyprland's window manager event hooks
 hl.on("config.reloaded", apply_monitor_config)
