@@ -1,3 +1,5 @@
+
+
 local function apply_monitor_config()
     local monitors = hl.get_monitors()
     local big_monitor_name = nil
@@ -9,7 +11,6 @@ local function apply_monitor_config()
             break
         end
     end
-
     -- Apply layouts based on detection
     if big_monitor_name then
         -- Big monitor on the left
@@ -24,8 +25,6 @@ local function apply_monitor_config()
 	    output    = "eDP-1",
 	    disabled  = true,
 	})
-
-	hl.dispatch(hl.dsp.focus({monitor = big_monitor_name}))
     else
         -- Fallback: Laptop screen only when disconnected from the KVM
         hl.monitor({
@@ -36,7 +35,6 @@ local function apply_monitor_config()
             scale    = "1",
         })
     end
-
 
     os.execute("pkill -9 -x waybar; waybar > /dev/null 2>&1 &")
 
