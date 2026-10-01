@@ -4,7 +4,6 @@
 
 hl.config({
     input = {
-	focus_on_close = 0,
         kb_layout  = "us",
         kb_variant = "",
         kb_model   = "",
