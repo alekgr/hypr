@@ -48,33 +48,46 @@ hl.window_rule({
     float = true,
 })
 
---floating rule 
 
---pypr stuff
 hl.window_rule({
-		name = "kitty_floating",
-		match = { class = "kitty-dropterm" },
-		float = true,
-		no_follow_mouse = true,
-		stay_focused = true,
-	})
-hl.window_rule ({
-		name = "kitty-cmus_floating",
-		match = { class = "kitty-cmus"},
-		float = true,
-		pin = false,
-		no_follow_mouse = true,
-		stay_focused = true,
-	})
-hl.window_rule ({
-		name = "neomutt_flaotinging",
-		match = { class = "neomutt1"},
-		float = true,
-		pin = true,
-		no_follow_mouse = true,
-		stay_focused = true,
-	})
+    name = "kitty_dropterm_scratchpad",
+    match = { class = "kitty-dropterm" },
+    float = true,
+    size = { "monitor_w * 0.7", "monitor_h * 0.7" },
+    center = true,
+    stay_focused = true,
+    workspace = "special:term silent",
+})
 
+hl.window_rule({
+    name = "kitty_dropneomutt_scratchpad",
+    match = { class = "kitty-dropneomutt" },
+    float = true,
+    size = { "monitor_w * 0.7", "monitor_h * 0.7" },
+    center = true,
+    stay_focused = true,
+    workspace = "special:neomutt silent",
+})
+
+hl.window_rule({
+    name = "kitty_dropyazi_scratchpad",
+    match = { class = "kitty-dropyazi" },
+    float = true,
+    size = { "monitor_w * 0.7", "monitor_h * 0.7" },
+    center = true,
+    stay_focused = true,
+    workspace = "special:yazi silent",
+})
+
+hl.window_rule({
+    name = "kitty_dropcmus_scratchpad",
+    match = { class = "kitty-dropcmus" },
+    float = true,
+    size = { "monitor_w * 0.7", "monitor_h * 0.7" },
+    center = true,
+    stay_focused = true,
+    workspace = "special:cmus silent",
+})
 
 
 -- waybar rules --kind of 
@@ -99,7 +112,7 @@ hl.window_rule ({
 -- workspace rules
 hl.window_rule ({
 		name = "kitty",
-		match = {initial_class = "^(kitty)$"},
+		match = {class = "^(kitty)$"},
 		workspace = "2",
 	})
 hl.window_rule ({
