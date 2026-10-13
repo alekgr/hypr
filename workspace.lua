@@ -13,3 +13,11 @@ for i = 2, 10 do
     persistent = false,
   })
 end
+
+for id = 11, 14 do
+  hl.workspace_rule({
+    workspace = tostring(id),
+    -- Pulls the workspace layout boundaries into a beautiful 70% viewport card
+    gaps_out = { 160, 280, 160, 280 }
+  })
+end
