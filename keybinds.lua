@@ -89,4 +89,67 @@ return function(config)
 	hl.bind(mainMod .. " + t", hl.dsp.exec_cmd('kitty --class=kitty-tasks -e bash -c "task list; exec tasksh"'))
 	hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty --class=kitty-nvim nvim"))
 	hl.bind(mainMod .. " + l", hl.dsp.exec_cmd("hyprlock"))
+
+	
+	hl.bind(mainMod .. " + SHIFT + Z", function()
+		-- 1. FIX SCRATCHPAD: TERM
+		hl.dispatch(hl.dsp.workspace.toggle_special("term"))
+		hl.dispatch(hl.dsp.window.float({ action = "set" }))   -- 1st: Break out of tiling
+		hl.dispatch(hl.dsp.window.float({ action = "center" })) -- 2nd: Center to set window bounds
+		hl.dispatch(hl.dsp.window.resize({ x = 1344, y = 756 })) -- 3rd: Enforce the crisp 70% box
+		hl.dispatch(hl.dsp.workspace.toggle_special("term"))
+
+		-- 2. FIX SCRATCHPAD: NEOMUTT
+		hl.dispatch(hl.dsp.workspace.toggle_special("neomutt"))
+		hl.dispatch(hl.dsp.window.float({ action = "set" }))
+		hl.dispatch(hl.dsp.window.float({ action = "center" }))
+		hl.dispatch(hl.dsp.window.resize({ x = 1344, y = 756 }))
+		hl.dispatch(hl.dsp.workspace.toggle_special("neomutt"))
+
+		-- 3. FIX SCRATCHPAD: YAZI
+		hl.dispatch(hl.dsp.workspace.toggle_special("yazi"))
+		hl.dispatch(hl.dsp.window.float({ action = "set" }))
+		hl.dispatch(hl.dsp.window.float({ action = "center" }))
+		hl.dispatch(hl.dsp.window.resize({ x = 1344, y = 756 }))
+		hl.dispatch(hl.dsp.workspace.toggle_special("yazi"))
+
+		-- 4. FIX SCRATCHPAD: CMUS
+		hl.dispatch(hl.dsp.workspace.toggle_special("cmus"))
+		hl.dispatch(hl.dsp.window.float({ action = "set" }))
+		hl.dispatch(hl.dsp.window.float({ action = "center" }))
+		hl.dispatch(hl.dsp.window.resize({ x = 1344, y = 756 }))
+		hl.dispatch(hl.dsp.workspace.toggle_special("cmus"))
+	end)
+
+	hl.bind(mainMod .. " + SHIFT + X", function()
+		-- RESTORE TERM
+		hl.dispatch(hl.dsp.workspace.toggle_special("term"))
+		hl.dispatch(hl.dsp.window.float({ action = "set" }))
+		hl.dispatch(hl.dsp.window.float({ action = "center" }))
+		hl.dispatch(hl.dsp.window.resize({ x = 2688, y = 1512 })) -- Expanded for big monitor resolution
+		hl.dispatch(hl.dsp.workspace.toggle_special("term"))
+
+		-- RESTORE NEOMUTT
+		hl.dispatch(hl.dsp.workspace.toggle_special("neomutt"))
+		hl.dispatch(hl.dsp.window.float({ action = "set" }))
+		hl.dispatch(hl.dsp.window.float({ action = "center" }))
+		hl.dispatch(hl.dsp.window.resize({ x = 2688, y = 1512 }))
+		hl.dispatch(hl.dsp.workspace.toggle_special("neomutt"))
+
+		-- RESTORE YAZI
+		hl.dispatch(hl.dsp.workspace.toggle_special("yazi"))
+		hl.dispatch(hl.dsp.window.float({ action = "set" }))
+		hl.dispatch(hl.dsp.window.float({ action = "center" }))
+		hl.dispatch(hl.dsp.window.resize({ x = 2688, y = 1512 }))
+		hl.dispatch(hl.dsp.workspace.toggle_special("yazi"))
+
+		-- RESTORE CMUS
+		hl.dispatch(hl.dsp.workspace.toggle_special("cmus"))
+		hl.dispatch(hl.dsp.window.float({ action = "set" }))
+		hl.dispatch(hl.dsp.window.float({ action = "center" }))
+		hl.dispatch(hl.dsp.window.resize({ x = 2688, y = 1512 }))
+		hl.dispatch(hl.dsp.workspace.toggle_special("cmus"))
+	end)
+
+
 end
