@@ -5,6 +5,4 @@ hl.on("hyprland.start",
 		hl.exec_cmd("kitty --class kitty-dropneomutt -e neomutt")
 		hl.exec_cmd("kitty --class kitty-dropyazi -e yazi")
 		hl.exec_cmd("kitty --class kitty-dropcmus -e cmus")
-
         end)
-
