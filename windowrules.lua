@@ -1,10 +1,7 @@
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
+-- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/ and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({
@@ -49,11 +46,11 @@ hl.window_rule({
 })
 
 
-hl.window_rule({
+ hl.window_rule({
     name = "kitty_dropterm_scratchpad",
     match = { class = "kitty-dropterm" },
     float = true,
-    size = { "monitor_w * 0.7", "monitor_h * 0.7" },
+    size = { "monitor_w*0.7", "monitor_h*0.7" },
     center = true,
     stay_focused = true,
     workspace = "special:term silent",
@@ -63,7 +60,7 @@ hl.window_rule({
     name = "kitty_dropneomutt_scratchpad",
     match = { class = "kitty-dropneomutt" },
     float = true,
-    size = { "monitor_w * 0.7", "monitor_h * 0.7" },
+    size = { "monitor_w*0.7", "monitor_h*0.7" },
     center = true,
     stay_focused = true,
     workspace = "special:neomutt silent",
@@ -73,7 +70,7 @@ hl.window_rule({
     name = "kitty_dropyazi_scratchpad",
     match = { class = "kitty-dropyazi" },
     float = true,
-    size = { "monitor_w * 0.7", "monitor_h * 0.7" },
+    size = { "monitor_w*0.7", "monitor_h*0.7" },
     center = true,
     stay_focused = true,
     workspace = "special:yazi silent",
@@ -83,11 +80,13 @@ hl.window_rule({
     name = "kitty_dropcmus_scratchpad",
     match = { class = "kitty-dropcmus" },
     float = true,
-    size = { "monitor_w * 0.7", "monitor_h * 0.7" },
+    size = { "monitor_w*0.7", "monitor_h*0.7" },
     center = true,
     stay_focused = true,
     workspace = "special:cmus silent",
 })
+
+
 
 
 -- waybar rules --kind of 
