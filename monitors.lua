@@ -19,7 +19,9 @@ local function apply_monitor_config()
             mode     = "3840x2160@60",
             position = "0x0",
             scale    = "1",
-        })
+	    bitdepth = 10,
+	    cm = "srgb",
+	})
         -- Laptop screen on the right
         hl.monitor({
             output    = "eDP-1",
@@ -35,6 +37,8 @@ local function apply_monitor_config()
             scale    = "1",
         })
     end
+
+    hl.exec_scheduled_prop_refresh_immediately()
 
     -- -- Re-bind special workspaces to active output so geometry re-evaluates nativel
     -- Restart Waybar cleanly
