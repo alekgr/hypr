@@ -15,7 +15,7 @@ suppressMaximizeRule:set_enabled(true)
 hl.window_rule({
     name = "mpv_stuff",
     match = { class = "mpv" },
-    float = false,
+    float = true,
     center = true,
     focus_on_activate = true,
     size = { "monitor_w*0.7", "monitor_h*0.7" },
@@ -70,7 +70,7 @@ hl.window_rule({
     float = true,
     size = { "monitor_w*0.7", "monitor_h*0.7" },
     center = true,
-    stay_focused = true,
+    stay_focused = false,
     workspace = "special:yazi silent",
 })
 
@@ -175,10 +175,10 @@ hl.window_rule({
     size = { 1800, 800 },
 })
 
--- Event Handlers
 hl.on("window.open", function(win)
     local class = type(win) == "table" and (win.class or win.initialClass) or ""
     if class:lower():match("mpv") then
+        -- Pull mpv to the current workspace and focus it immediately
         hl.dispatch("movetoworkspace", "active")
         hl.dispatch("focuswindow", "class:mpv")
     end
