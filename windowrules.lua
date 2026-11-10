@@ -65,16 +65,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "kitty_dropyazi_scratchpad",
-    match = { class = "kitty-dropyazi" },
-    float = true,
-    size = { "monitor_w*0.7", "monitor_h*0.7" },
-    center = true,
-    stay_focused = false,
-    workspace = "special:yazi silent",
-})
-
-hl.window_rule({
     name = "kitty_dropcmus_scratchpad",
     match = { class = "kitty-dropcmus" },
     float = true,
