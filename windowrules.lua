@@ -136,6 +136,13 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name = "kitty-yazi",
+    match = { class = "kitty-yazi" },
+    workspace = "7",
+})
+
+
+hl.window_rule({
     name = "kitty-weechat2",
     match = {
         class = "kitty",
