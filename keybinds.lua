@@ -48,10 +48,10 @@ return function(config)
 	    	hl.dsp.workspace.toggle_special("neomutt")
 	)
 
-	hl.bind(
-		mainMod .. " + E",
-	    	hl.dsp.workspace.toggle_special("yazi")
-	)
+	-- hl.bind(
+	-- 	mainMod .. " + E",
+	--     	hl.dsp.workspace.toggle_special("yazi")
+	-- )
 
 	hl.bind(
 		mainMod .. " + B",
@@ -89,6 +89,7 @@ return function(config)
 	hl.bind(mainMod .. " + t", hl.dsp.exec_cmd('kitty --class=kitty-tasks -e bash -c "task list; exec tasksh"'))
 	hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty --class=kitty-nvim nvim"))
 	hl.bind(mainMod .. " + l", hl.dsp.exec_cmd("hyprlock"))
+	hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("kitty --class=kitty-yazi yazi"))
 
 	
 	hl.bind(mainMod .. " + SHIFT + Z", function()
