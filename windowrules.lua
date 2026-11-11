@@ -120,9 +120,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "kitty-weechat",
-    match = { class = "kitty-weechat" },
-    workspace = "5",
+  name = "weechat",
+  match = {
+    class = "^(kitty-weechat)$",
+  },
+  workspace = "5",
 })
 
 hl.window_rule({
@@ -132,14 +134,14 @@ hl.window_rule({
 })
 
 
-hl.window_rule({
-    name = "kitty-weechat2",
-    match = {
-        class = "kitty",
-        title = "weechat",
-    },
-    workspace = "6",
-})
+-- hl.window_rule({
+--     name = "kitty-weechat2",
+--     match = {
+--         class = "kitty",
+--         title = "weechat",
+--     },
+--     workspace = "6",
+-- })
 
 hl.window_rule({
     name = "browser transparency",
